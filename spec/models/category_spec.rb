@@ -22,8 +22,8 @@ RSpec.describe Category, type: :model do
 
     it 'validates uniqueness of name' do
       user = User.create(name: 'John Doe')
-      existing_category = Category.create(name: 'Category1 Name', icon: 'category-icon', user: user)
-      new_category = Category.create(name: 'Category1 Name', icon: 'another-icon', user: user)
+      existing_category = Category.create(name: 'Category1 Name', icon: 'category-icon', user:)
+      new_category = Category.create(name: 'Category1 Name', icon: 'another-icon', user:)
       expect(existing_category).to be_valid
       expect(new_category).not_to be_valid
       expect(new_category.errors[:name]).to include('has already been taken')
@@ -36,4 +36,3 @@ RSpec.describe Category, type: :model do
     end
   end
 end
-
