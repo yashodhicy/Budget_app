@@ -1,0 +1,14 @@
+<ul class="navbar">
+    <li class="dropdown">
+        <a class="btn dropbtn"><i class="fa-solid fa-bars"></i></a>
+            <div class="dropdown-content">
+            <%= link_to 'home',  categories_path , class: " pages-links btn-home" %>
+            <%# <%= link_to 'your recipes', recipes_path, class: "pages-links btn-recipes"%>
+            <%# <%= link_to 'public recipes', public_recipes_path, class: "pages-links btn-recipes"%>
+            </div>
+    </li>
+    <li> <%= yield :page_title %> </li>
+    <li class="searchbtn">
+        <i class="fa-solid fa-search"></i>
+    </li>
+</ul>
