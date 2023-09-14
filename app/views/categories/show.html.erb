@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag "categories" %>
 <% content_for :page_title, "Expenses" %>
-<%= @category.total_amount%>
+<p class="tamountE"> Total amount:          <%= @category.total_amount%> </p>
 
 <div id="expenses">
   <% @expenses.each do |expense| %>
@@ -7,9 +8,10 @@
   <% end %>
 </div>
 
-<div>
-  <%# <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path%>
-  <%= link_to "New expense", new_category_expense_path(@category) %>
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div >
+  <div class = "links" >
+  <%= link_to "Back to categories", categories_path , class: "link_to"%>
+  <%= link_to "New expense", new_category_expense_path(@category) , class: "link_to" %>
+  </div>
+  <%= button_to "Destroy this category", @category, method: :delete , class: "link_to delete" %>
 </div>

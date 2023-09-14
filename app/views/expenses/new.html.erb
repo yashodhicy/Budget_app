@@ -1,9 +1,13 @@
-<% content_for :page_title, "New Expense" %>
-
-<%= render "form", expense: @expense %>
-
-<br>
+<%= stylesheet_link_tag "form" %>
+<%= stylesheet_link_tag "categories" %>
 
 <div>
-  <%= link_to "Back to expenses", category_expenses_path(@category) %>
+  <%= link_to "Back", category_path(@category) , class:"link_to back" %>
 </div>
+
+<% content_for :page_title, "New Expense" %>
+<section class = "new-exp">
+<%= render "form", expense: @expense %>
+</section>
+<br>
+
