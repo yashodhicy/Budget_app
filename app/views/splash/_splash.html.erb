@@ -1,17 +1,19 @@
+<%= stylesheet_link_tag "splash" %>
+
 <section id='splash-screen'>
-  <div class="svg">
-    <h1 class="flex bg-heading">Budgety</h1>
-    <%= image_tag "budget.jpg", class: "img-width" %>
+  <div class="topic">
+    <h1 class="heading">Budgety</h1>
+    <%= image_tag "budget.jpg", class: "image" %>
   </div>
-  <div class="svg">
-    <p class="md-txt">
+  <div class="welcome">
+    <p >
       Welcome to your personal budget app
     </p>
-    <p class="sm-txt">
-      This is a mobile application that allows you to keep track of your expenses and income
+    <p>
+      When Keep forgetting how did you spend your money, let us remember for you.
     </p>
   </div>
-  <div class="side">
-    <%= link_to "Get started", mains_path, class: "txt-bg-color" %>
+  <div class="start">
+    <%= link_to "Get started", mains_path, class: "link_to start-link" %>
   </div>
 </section>
