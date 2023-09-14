@@ -6,6 +6,7 @@ class ExpensesController < ApplicationController
     @category = Category.find(params[:category_id])
     @expenses = @category.expenses.all
   end
+
   # GET /expenses/new
   def new
     @author = current_user
