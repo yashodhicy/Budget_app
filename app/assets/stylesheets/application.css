@@ -11,7 +11,6 @@
 * {
   font-family: "lato", sans-serif;
   line-height: 1.5;
-  background-color: var(--blue);
 }
 
 .heading {
@@ -26,10 +25,9 @@ a {
 }
 
 .link_to {
-  background-color: var(--green);
+  background-color: var(--blue);
   border-radius: 5px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px, rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px, rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
@@ -39,12 +37,18 @@ a {
   transition: all 250ms;
   border: 0;
   font-size: 16px;
+  color: var(--white);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin: 0;
 }
 
 .link_to:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+  box-shadow: rgba(44, 151, 187, 0.35) 0 -25px 18px -14px inset, rgba(44, 151, 187, 0.25) 0 1px 2px, rgba(44, 151, 187, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 151, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
 }
