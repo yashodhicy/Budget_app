@@ -1,5 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :page_title, "Categories" %>
 
+<%= link_to "New category", new_category_path, class: "link_to newcat" %>
 <h1>Categories</h1>
 
 <div id="categories">
@@ -8,4 +9,3 @@
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>

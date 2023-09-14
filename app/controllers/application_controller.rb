@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     categories_path
   end
 
+  def after_sign_out_path_for(_resource)
+    new_user_session_path
+  end
+
   protected
 
   def update_allowed_parameters
