@@ -3,33 +3,41 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @category = Category.find(params[:category_id])
+    @expenses = @category.expenses.all
   end
-
-  # GET /expenses/1 or /expenses/1.json
-  def show; end
-
   # GET /expenses/new
   def new
+    @author = current_user
+    @category = Category.find(params[:category_id])
     @expense = Expense.new
   end
 
-  # GET /expenses/1/edit
-  def edit; end
-
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @author = current_user
+    saved_expenses = []
+    category_ids = params[:expense][:category_ids].reject(&:empty?).map(&:to_i).uniq
 
-    respond_to do |format|
+    category_ids.each do |c_id|
+      @category = Category.find(c_id)
+      @expense = Expense.new(expense_params)
+      @expense.author_id = current_user.id
+      @category.expenses << @expense
+
       if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
+        saved_expenses << @expense
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
+        # Handle the case where an expense couldn't be saved
+        respond_to do |format|
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @expense.errors, status: :unprocessable_entity }
+        end
       end
     end
+
+    save?(saved_expenses, category_ids)
+    # Redirect to the first category's show page after all expenses have been processed
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
@@ -64,6 +72,18 @@ class ExpensesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expense_params
-    params.require(:expense).permit(:name, :amount, :user_id)
+    params.require(:expense).permit(:name, :amount, :author_id)
+  end
+
+  def save?(saved_expenses, category_ids)
+    if saved_expenses.present?
+      redirect_to category_path(category_ids.first), notice: 'Expenses were successfully created.'
+    else
+      # Handle the case where no expenses were successfully saved
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: { error: 'No expenses were saved.' }, status: :unprocessable_entity }
+      end
+    end
   end
 end
