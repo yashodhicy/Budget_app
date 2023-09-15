@@ -26,7 +26,8 @@ RSpec.describe Category, type: :model do
         email: 'yashodhi@mail.com',
         password: '123456',
         password_confirmation: '123456',
-        confirmed_at: Time.now)
+        confirmed_at: Time.now
+      )
       existing_category = Category.create(name: 'Category1 Name', icon: 'category-icon', user:)
       new_category = Category.create(name: 'Category1 Name', icon: 'another-icon', user:)
       expect(existing_category).to be_valid

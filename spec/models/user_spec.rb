@@ -8,8 +8,9 @@ RSpec.describe User, type: :model do
         email: 'yashodhi@mail.com',
         password: '123456',
         password_confirmation: '123456',
-        confirmed_at: Time.now)
-        
+        confirmed_at: Time.now
+      )
+
       expect(user).to be_valid
 
       user.name = nil
