@@ -60,7 +60,6 @@ RSpec.describe 'categories page', type: :system do
       visit categories_path
     end
 
-
     it 'redirects to the category show page when clicking on the link' do
       @category = categories.first
 

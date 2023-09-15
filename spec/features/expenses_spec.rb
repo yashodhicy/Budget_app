@@ -27,7 +27,6 @@ RSpec.describe 'categories page', type: :system do
                               ])
   end
 
-
   describe 'show correct expenses for a category' do
     before(:example) do
       sign_in user1
