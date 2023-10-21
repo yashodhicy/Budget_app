@@ -1,0 +1,63 @@
+#splash-screen {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4rem);
+  height: 100%;
+  margin: 0;
+  padding: 0 2rem;
+  justify-content: center;
+  background-color: var(--blue);
+  color: white;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.start-link {
+  background-color: var(--green);
+}
+
+.start,
+.welcome,
+.topic {
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+.image {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* main page */
+
+#mains {
+  display: flex;
+  position: fixed;
+  bottom: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.login {
+  width: 70%;
+}
+
+.topicm {
+  font-size: 3rem;
+  font-weight: 800;
+
+  /* color: var(--white); */
+  margin-bottom: 20rem;
+}
+
+.signup {
+  background-color: transparent !important;
+  color: var(--ash);
+}

@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "splash" %>
+
+<section id='splash-screen'>
+  <div class="topic">
+    <h1 class="heading">Budgety</h1>
+    <%= image_tag "budget.jpg", class: "image" %>
+  </div>
+  <div class="welcome">
+    <p >
+      Welcome to your personal budget app
+    </p>
+    <p>
+      When Keep forgetting how did you spend your money, let us remember for you.
+    </p>
+  </div>
+  <div class="start">
+    <%= link_to "Get started", mains_path, class: "link_to start-link" %>
+  </div>
+</section>

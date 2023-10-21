@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "form" %>
+<%= stylesheet_link_tag "categories" %>
+<% content_for :page_title, "New Category" %>
+<div>
+  <%= link_to " < Back", categories_path, class:"link_to back"%>
+</div>
+<h1>New category</h1>
+<section  class = "new_cat">
+<%= render "form", category: @category %>
+</section>
+<br>
+
