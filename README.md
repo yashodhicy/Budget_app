@@ -111,7 +111,7 @@ Original design idea by Gregoire Vella on Behance.
 <!-- DEPLOYEMENT LINK -->
 
 ## 🔭 Demo Link <a name="demo-link"></a>
-Click [here](https://https://yashbudgetapp.onrender.com/) 
+Click [here](https://yashbudgetapp.onrender.com/) 
 
  <!-- Video presentation Link-->
 
